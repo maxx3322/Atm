@@ -1,0 +1,11 @@
+/Users/geersm/RiderProjects/Atm/Atm.Domain/bin/Debug/net8.0/Atm.Domain.deps.json
+/Users/geersm/RiderProjects/Atm/Atm.Domain/bin/Debug/net8.0/Atm.Domain.dll
+/Users/geersm/RiderProjects/Atm/Atm.Domain/bin/Debug/net8.0/Atm.Domain.pdb
+/Users/geersm/RiderProjects/Atm/Atm.Domain/obj/Debug/net8.0/Atm.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/geersm/RiderProjects/Atm/Atm.Domain/obj/Debug/net8.0/Atm.Domain.AssemblyInfoInputs.cache
+/Users/geersm/RiderProjects/Atm/Atm.Domain/obj/Debug/net8.0/Atm.Domain.AssemblyInfo.cs
+/Users/geersm/RiderProjects/Atm/Atm.Domain/obj/Debug/net8.0/Atm.Domain.csproj.CoreCompileInputs.cache
+/Users/geersm/RiderProjects/Atm/Atm.Domain/obj/Debug/net8.0/Atm.Domain.dll
+/Users/geersm/RiderProjects/Atm/Atm.Domain/obj/Debug/net8.0/refint/Atm.Domain.dll
+/Users/geersm/RiderProjects/Atm/Atm.Domain/obj/Debug/net8.0/Atm.Domain.pdb
+/Users/geersm/RiderProjects/Atm/Atm.Domain/obj/Debug/net8.0/ref/Atm.Domain.dll
