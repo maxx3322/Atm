@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "axrbDYNeFKJCx1cAQ+jy74i57HIooxoCHPw+ikWKT40Y1CphoNTGzsOBSQoA1Lf/ufSJwPKFlUPxcXVU6GGR/w==",
+  "success": true,
+  "projectFilePath": "/Users/geersm/RiderProjects/Atm/Atm.Web/Atm.Web.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://localhost:8081/repository/ngss-nuget-all/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    },
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://localhost:8081/repository/ngss-nuget-prerelease/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}
