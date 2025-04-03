@@ -1,4 +1,3 @@
-// Models/TransactionType.cs
 namespace Atm.Domain.Models.Transactions;
 
 /// <summary>
@@ -14,5 +13,10 @@ public enum TransactionType
     /// <summary>
     /// Money removed from the account
     /// </summary>
-    Withdrawal
+    Withdrawal,
+    
+    /// <summary>
+    /// Money transferred to another account
+    /// </summary>
+    Transfer
 }

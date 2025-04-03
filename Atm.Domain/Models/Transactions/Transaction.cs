@@ -1,4 +1,3 @@
-// Models/Transaction.cs
 namespace Atm.Domain.Models.Transactions;
 
 public class Transaction
@@ -37,4 +36,20 @@ public class Transaction
     /// The type of transaction (Deposit or Withdrawal)
     /// </summary>
     public TransactionType Type { get; init; }
+    
+    /// <summary>
+    /// Balance after the transaction;
+    /// </summary>
+    public decimal BalanceAfter { get; init; }
+    
+    /// <summary>
+    /// The Id of the account that received the transfer.
+    /// </summary>
+    public Guid? ReceiverAccountId { get; init; }
+    
+    /// <summary>
+    /// Receiving account username.
+    /// </summary>
+    public string ReceiverAccountUsername { get; init; }
+    
 }
