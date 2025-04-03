@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/geersm/RiderProjects/Atm/Atm.Application/Atm.Application.csproj": {}
+    "/Users/geersm/RiderProjects/Atm/Atm.Domain/Atm.Domain.csproj": {}
   },
   "projects": {
-    "/Users/geersm/RiderProjects/Atm/Atm.Application/Atm.Application.csproj": {
+    "/Users/geersm/RiderProjects/Atm/Atm.Domain/Atm.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/geersm/RiderProjects/Atm/Atm.Application/Atm.Application.csproj",
-        "projectName": "Atm.Application",
-        "projectPath": "/Users/geersm/RiderProjects/Atm/Atm.Application/Atm.Application.csproj",
+        "projectUniqueName": "/Users/geersm/RiderProjects/Atm/Atm.Domain/Atm.Domain.csproj",
+        "projectName": "Atm.Domain",
+        "projectPath": "/Users/geersm/RiderProjects/Atm/Atm.Domain/Atm.Domain.csproj",
         "packagesPath": "/Users/geersm/.nuget/packages/",
-        "outputPath": "/Users/geersm/RiderProjects/Atm/Atm.Application/obj/",
+        "outputPath": "/Users/geersm/RiderProjects/Atm/Atm.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/geersm/.nuget/NuGet/NuGet.Config"
@@ -38,12 +38,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.Components.Web": {
-              "target": "Package",
-              "version": "[8.0.4, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
