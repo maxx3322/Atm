@@ -1,0 +1,58 @@
+{
+  "version": 2,
+  "dgSpecHash": "1LaFFA8kKkbLk4gqHHqUlEG34NTOewEz8oqWFhfV3cQ82QO3Ssw5PRjADxbOVXfsSCnHIVQjb2pinnNl9RuB+Q==",
+  "success": false,
+  "projectFilePath": "/Users/geersm/RiderProjects/Atm/Atm.Application/Atm.Application.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://localhost:8081/repository/ngss-nuget-all/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    },
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://localhost:8081/repository/ngss-nuget-prerelease/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Microsoft.AspNetCore.Components.Web' from remote source 'http://localhost:8081/repository/ngss-nuget-prerelease/v3/content/0/microsoft.aspnetcore.components.web/index.json'.",
+      "libraryId": "Microsoft.AspNetCore.Components.Web"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Microsoft.AspNetCore.Components.Web' from remote source 'http://localhost:8081/repository/ngss-nuget-all/v3/content/0/microsoft.aspnetcore.components.web/index.json'.",
+      "libraryId": "Microsoft.AspNetCore.Components.Web"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Microsoft.AspNetCore.Components.Web' from remote source 'http://localhost:8081/repository/ngss-nuget-all/v3/content/0/microsoft.aspnetcore.components.web/index.json'.",
+      "libraryId": "Microsoft.AspNetCore.Components.Web"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Microsoft.AspNetCore.Components.Web' from remote source 'http://localhost:8081/repository/ngss-nuget-prerelease/v3/content/0/microsoft.aspnetcore.components.web/index.json'.",
+      "libraryId": "Microsoft.AspNetCore.Components.Web"
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package Microsoft.AspNetCore.Components.Web. No packages exist with this id in source(s): ngss-nuget-all, ngss-nuget-prerelease",
+      "libraryId": "Microsoft.AspNetCore.Components.Web",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}
