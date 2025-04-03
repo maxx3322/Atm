@@ -1,0 +1,69 @@
+@page "/create-account"
+@using Atm.Web.Models
+@using Atm.Web.Services.Accounts
+@inject IAccountService AccountService
+@rendermode InteractiveServer
+
+<PageTitle>Create Account</PageTitle>
+
+<div class="container">
+    <h1>Create New Account</h1>
+
+    @if (isSuccess)
+    {
+        <div class="alert alert-success">
+            <h4>Account Created Successfully!</h4>
+            <p>Username: @model.AccountNumber</p>
+            <button class="btn btn-primary mt-2" @onclick="ResetForm">Create Another Account</button>
+        </div>
+    }
+    else
+    {
+        <EditForm Model="@model" OnValidSubmit="HandleSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="mb-3">
+                <label class="form-label">Username (2-9 characters):</label>
+                <InputText @bind-Value="model.AccountNumber" class="form-control" maxlength="9" />
+                <ValidationMessage For="@(() => model.AccountNumber)" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Initial Balance (max $10,000):</label>
+                <InputNumber @bind-Value="model.InitialBalance" class="form-control" />
+                <ValidationMessage For="@(() => model.InitialBalance)" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create Account</button>
+        </EditForm>
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div class="alert alert-danger mt-3">@errorMessage</div>
+        }
+    }
+</div>
+
+@code {
+    private AccountCreateModel model = new();
+    private string? errorMessage;
+    private bool isSuccess;
+    private Guid? createdAccountId;
+
+    private void ResetForm()
+    {
+        model = new();
+        errorMessage = null;
+        isSuccess = false;
+        createdAccountId = null;
+    }
+
+    private async Task HandleSubmit()
+    {
+        var result = await AccountService.CreateAccountAsync(model);
+        isSuccess = result.isSuccess;
+        errorMessage = result.errorMessage;
+        createdAccountId = result.createdAccountId;
+    }
+}

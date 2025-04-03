@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atm.Domain", "Atm.Domain\At
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atm.Application", "Atm.Application\Atm.Application.csproj", "{A9178112-4AB3-4073-97B9-6EFEF38AFDB8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atm.Tests", "Atm.Tests\Atm.Tests.csproj", "{8B0499EE-C594-44C1-B851-F60B3EF28D71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{A9178112-4AB3-4073-97B9-6EFEF38AFDB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9178112-4AB3-4073-97B9-6EFEF38AFDB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9178112-4AB3-4073-97B9-6EFEF38AFDB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B0499EE-C594-44C1-B851-F60B3EF28D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B0499EE-C594-44C1-B851-F60B3EF28D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B0499EE-C594-44C1-B851-F60B3EF28D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B0499EE-C594-44C1-B851-F60B3EF28D71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

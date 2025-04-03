@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Atm.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c42d346dfa54690d19f0422120ae692138c4e79b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Atm.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Atm.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

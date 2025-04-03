@@ -1,11 +1,11 @@
-﻿// Models/Account.cs
-namespace Atm.Domain.Models;
+﻿namespace Atm.Domain.Models.Accounts;
 
 /// <summary>
 /// Represents a bank account in the ATM system
 /// </summary>
 public class Account
 {
+
     /// <summary>
     /// Unique identifier for the account
     /// </summary>
@@ -14,23 +14,23 @@ public class Account
     /// <summary>
     /// The account number used for identification
     /// </summary>
-    public string AccountNumber { get; init; }
+    public string Username { get; init; }
 
     /// <summary>
     /// Current balance of the account
     /// </summary>
-    public decimal Balance { get; init; }
+    public decimal Balance { get; set; }
+    
 
     /// <summary>
-    /// PIN code for account security
+    /// Creates a new account
     /// </summary>
-    public string Pin { get; init; }
-
-    public Account(string accountNumber, string pin, decimal initialBalance = 0)
+    /// <param name="username">The account number</param>
+    /// <param name="initialBalance">Initial balance, defaults to 0</param>
+    public Account(string username,  decimal initialBalance = 0)
     {
         Id = Guid.NewGuid();
-        AccountNumber = accountNumber;
-        Pin = pin;
+        Username = username;
         Balance = initialBalance;
     }
 }

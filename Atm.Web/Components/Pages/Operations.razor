@@ -1,0 +1,262 @@
+@page "/atm-operations"
+@using System.ComponentModel.DataAnnotations
+@using Atm.Domain.Models.Accounts
+@using Atm.Domain.Models.Transactions
+@using Atm.Domain.Repositories.Accounts
+@using Atm.Domain.Services.Transactions
+@inject ITransactionService TransactionService
+@inject IAccountRepository AccountRepository
+@rendermode InteractiveServer
+
+<PageTitle>ATM Operations</PageTitle>
+
+<div class="container">
+    <h1>ATM Operations</h1>
+
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="alert alert-danger">@errorMessage</div>
+    }
+
+    @if (!isAuthenticated)
+    {
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Which user would you like to use?</h3>
+                    </div>
+                    <div class="card-body">
+                        <EditForm Model="@loginModel" OnValidSubmit="HandleLogin">
+                            <DataAnnotationsValidator />
+                            <div class="mb-3">
+                                <label class="form-label">Username:</label>
+                                <InputText @bind-Value="loginModel.Username" class="form-control" />
+                                <ValidationMessage For="@(() => loginModel.Username)" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">Access Account</button>
+                        </EditForm>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="account-info">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Account Information</h2>
+                <button class="btn btn-secondary" @onclick="HandleLogout">Exit</button>
+            </div>
+            <p><strong>Account Number:</strong> @account?.Username</p>
+            <p><strong>Current Balance:</strong> @account?.Balance.ToString("C")</p>
+        </div>
+
+        <div class="transaction-operations">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Deposit</h3>
+                    <EditForm Model="@depositModel" OnValidSubmit="HandleDeposit">
+                        <DataAnnotationsValidator />
+                        <div class="mb-3">
+                            <label class="form-label">Amount:</label>
+                            <InputNumber @bind-Value="depositModel.Amount" class="form-control" />
+                            <ValidationMessage For="@(() => depositModel.Amount)" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Deposit</button>
+                    </EditForm>
+                </div>
+
+                <div class="col-md-4">
+                    <h3>Withdraw</h3>
+                    <EditForm Model="@withdrawModel" OnValidSubmit="HandleWithdraw">
+                        <DataAnnotationsValidator />
+                        <div class="mb-3">
+                            <label class="form-label">Amount:</label>
+                            <InputNumber @bind-Value="withdrawModel.Amount" class="form-control" />
+                            <ValidationMessage For="@(() => withdrawModel.Amount)" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Withdraw</button>
+                    </EditForm>
+                </div>
+
+                <div class="col-md-4">
+                    <h3>Transfer</h3>
+                    <EditForm Model="@transferModel" OnValidSubmit="HandleTransfer">
+                        <DataAnnotationsValidator />
+                        <div class="mb-3">
+                            <label class="form-label">Destination Account Username:</label>
+                            <InputText @bind-Value="transferModel.ToAccountUsername" class="form-control" />
+                            <ValidationMessage For="@(() => transferModel.ToAccountUsername)" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Amount:</label>
+                            <InputNumber @bind-Value="transferModel.Amount" class="form-control" />
+                            <ValidationMessage For="@(() => transferModel.Amount)" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Transfer</button>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+
+        <div class="transaction-history mt-4">
+            <h3>Transaction History</h3>
+            <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Date/Time</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Balance After</th>
+                            <th>Related Account</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var transaction in transactions)
+                        {
+                            <tr>
+                                <td>@transaction.TimeOfTransaction.ToString("g")</td>
+                                <td>@transaction.Type</td>
+                                <td>@transaction.Amount.ToString("C")</td>
+                                <td>@transaction.BalanceAfter.ToString("C")</td>
+                                <td>@(transaction.ReceiverAccountUsername ?? "-")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private bool isAuthenticated = false;
+    private Account? account;
+    private List<Transaction> transactions = new();
+    private LoginModel loginModel = new();
+    private DepositModel depositModel = new();
+    private WithdrawModel withdrawModel = new();
+    private TransferModel transferModel = new();
+    private string? errorMessage;
+
+    private async Task HandleLogin()
+    {
+        try
+        {
+            errorMessage = null;
+            account = AccountRepository.GetByUsername(loginModel.Username);
+            if (account == null)
+            {
+                errorMessage = "Account not found";
+                return;
+            }
+
+            LoadAccountData(account.Id);
+            isAuthenticated = true;
+            loginModel = new();
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+    }
+
+    private void HandleLogout()
+    {
+        isAuthenticated = false;
+        account = null;
+        transactions.Clear();
+        errorMessage = null;
+    }
+
+    private void LoadAccountData(Guid accountId)
+    {
+        account = AccountRepository.GetById(accountId);
+        transactions = TransactionService.GetTransactionHistory(accountId).ToList();
+    }
+
+    private async Task HandleDeposit()
+    {
+        try
+        {
+            errorMessage = null;
+            if (account != null)
+            {
+                TransactionService.Deposit(account.Id, depositModel.Amount);
+                LoadAccountData(account.Id);
+                depositModel = new();
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+    }
+
+    private async Task HandleWithdraw()
+    {
+        try
+        {
+            errorMessage = null;
+            if (account != null)
+            {
+                TransactionService.Withdraw(account.Id, withdrawModel.Amount);
+                LoadAccountData(account.Id);
+                withdrawModel = new();
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+    }
+
+    private async Task HandleTransfer()
+    {
+        try
+        {
+            errorMessage = null;
+            if (account != null)
+            {
+                var toAccount = AccountRepository.GetByUsername(transferModel.ToAccountUsername);
+                if (toAccount == null)
+                {
+                    errorMessage = "Destination account not found";
+                    return;
+                }
+
+                TransactionService.Transfer(account.Id, toAccount.Id, transferModel.Amount);
+                LoadAccountData(account.Id);
+                transferModel = new();
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+    }
+
+    private class LoginModel
+    {
+        [Required(ErrorMessage = "Username is required")]
+        public string Username { get; set; } = string.Empty;
+    }
+
+    private class DepositModel
+    {
+        public decimal Amount { get; set; }
+    }
+
+    private class WithdrawModel
+    {
+        public decimal Amount { get; set; }
+    }
+
+    private class TransferModel
+    {
+        public string ToAccountUsername { get; set; } = string.Empty;
+        public decimal Amount { get; set; }
+    }
+}

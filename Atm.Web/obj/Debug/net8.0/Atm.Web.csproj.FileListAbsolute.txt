@@ -6,6 +6,11 @@
 /Users/geersm/RiderProjects/Atm/Atm.Web/bin/Debug/net8.0/Atm.Web.runtimeconfig.json
 /Users/geersm/RiderProjects/Atm/Atm.Web/bin/Debug/net8.0/Atm.Web.dll
 /Users/geersm/RiderProjects/Atm/Atm.Web/bin/Debug/net8.0/Atm.Web.pdb
+/Users/geersm/RiderProjects/Atm/Atm.Web/bin/Debug/net8.0/Atm.Application.dll
+/Users/geersm/RiderProjects/Atm/Atm.Web/bin/Debug/net8.0/Atm.Domain.dll
+/Users/geersm/RiderProjects/Atm/Atm.Web/bin/Debug/net8.0/Atm.Application.pdb
+/Users/geersm/RiderProjects/Atm/Atm.Web/bin/Debug/net8.0/Atm.Domain.pdb
+/Users/geersm/RiderProjects/Atm/Atm.Web/obj/Debug/net8.0/Atm.Web.csproj.AssemblyReference.cache
 /Users/geersm/RiderProjects/Atm/Atm.Web/obj/Debug/net8.0/Atm.Web.GeneratedMSBuildEditorConfig.editorconfig
 /Users/geersm/RiderProjects/Atm/Atm.Web/obj/Debug/net8.0/Atm.Web.AssemblyInfoInputs.cache
 /Users/geersm/RiderProjects/Atm/Atm.Web/obj/Debug/net8.0/Atm.Web.AssemblyInfo.cs
@@ -22,6 +27,7 @@
 /Users/geersm/RiderProjects/Atm/Atm.Web/obj/Debug/net8.0/scopedcss/Components/Layout/NavMenu.razor.rz.scp.css
 /Users/geersm/RiderProjects/Atm/Atm.Web/obj/Debug/net8.0/scopedcss/bundle/Atm.Web.styles.css
 /Users/geersm/RiderProjects/Atm/Atm.Web/obj/Debug/net8.0/scopedcss/projectbundle/Atm.Web.bundle.scp.css
+/Users/geersm/RiderProjects/Atm/Atm.Web/obj/Debug/net8.0/Atm.Web.csproj.Up2Date
 /Users/geersm/RiderProjects/Atm/Atm.Web/obj/Debug/net8.0/Atm.Web.dll
 /Users/geersm/RiderProjects/Atm/Atm.Web/obj/Debug/net8.0/refint/Atm.Web.dll
 /Users/geersm/RiderProjects/Atm/Atm.Web/obj/Debug/net8.0/Atm.Web.pdb

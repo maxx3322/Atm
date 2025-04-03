@@ -1,10 +1,22 @@
+using Atm.Application.Repositories.Accounts;
+using Atm.Application.Repositories.Transactions;
+using Atm.Application.Services.Transactions;
+using Atm.Domain.Repositories.Accounts;
+using Atm.Domain.Repositories.Transactions;
+using Atm.Domain.Services.Transactions;
 using Atm.Web.Components;
+using Atm.Web.Services.Accounts;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddScoped<IAccountService, AccountService>();
+
 
 var app = builder.Build();
 

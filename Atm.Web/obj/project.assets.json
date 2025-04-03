@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "Atm.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Atm.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Atm.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Atm.Application.dll": {}
+        }
+      },
+      "Atm.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Atm.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Atm.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Atm.Application/1.0.0": {
+      "type": "project",
+      "path": "../Atm.Application/Atm.Application.csproj",
+      "msbuildProject": "../Atm.Application/Atm.Application.csproj"
+    },
+    "Atm.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Atm.Domain/Atm.Domain.csproj",
+      "msbuildProject": "../Atm.Domain/Atm.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "Atm.Application >= 1.0.0",
+      "Atm.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/geersm/.nuget/packages/": {}
@@ -32,7 +70,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/geersm/RiderProjects/Atm/Atm.Application/Atm.Application.csproj": {
+              "projectPath": "/Users/geersm/RiderProjects/Atm/Atm.Application/Atm.Application.csproj"
+            },
+            "/Users/geersm/RiderProjects/Atm/Atm.Domain/Atm.Domain.csproj": {
+              "projectPath": "/Users/geersm/RiderProjects/Atm/Atm.Domain/Atm.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

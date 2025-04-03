@@ -1,0 +1,203 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/geersm/RiderProjects/Atm/Atm.Tests/Atm.Tests.csproj": {}
+  },
+  "projects": {
+    "/Users/geersm/RiderProjects/Atm/Atm.Application/Atm.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/geersm/RiderProjects/Atm/Atm.Application/Atm.Application.csproj",
+        "projectName": "Atm.Application",
+        "projectPath": "/Users/geersm/RiderProjects/Atm/Atm.Application/Atm.Application.csproj",
+        "packagesPath": "/Users/geersm/.nuget/packages/",
+        "outputPath": "/Users/geersm/RiderProjects/Atm/Atm.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/geersm/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "http://localhost:8081/repository/ngss-nuget-all/index.json": {},
+          "http://localhost:8081/repository/ngss-nuget-prerelease/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/geersm/RiderProjects/Atm/Atm.Domain/Atm.Domain.csproj": {
+                "projectPath": "/Users/geersm/RiderProjects/Atm/Atm.Domain/Atm.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/geersm/RiderProjects/Atm/Atm.Domain/Atm.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/geersm/RiderProjects/Atm/Atm.Domain/Atm.Domain.csproj",
+        "projectName": "Atm.Domain",
+        "projectPath": "/Users/geersm/RiderProjects/Atm/Atm.Domain/Atm.Domain.csproj",
+        "packagesPath": "/Users/geersm/.nuget/packages/",
+        "outputPath": "/Users/geersm/RiderProjects/Atm/Atm.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/geersm/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "http://localhost:8081/repository/ngss-nuget-all/index.json": {},
+          "http://localhost:8081/repository/ngss-nuget-prerelease/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/geersm/RiderProjects/Atm/Atm.Tests/Atm.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/geersm/RiderProjects/Atm/Atm.Tests/Atm.Tests.csproj",
+        "projectName": "Atm.Tests",
+        "projectPath": "/Users/geersm/RiderProjects/Atm/Atm.Tests/Atm.Tests.csproj",
+        "packagesPath": "/Users/geersm/.nuget/packages/",
+        "outputPath": "/Users/geersm/RiderProjects/Atm/Atm.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/geersm/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "http://localhost:8081/repository/ngss-nuget-all/index.json": {},
+          "http://localhost:8081/repository/ngss-nuget-prerelease/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/geersm/RiderProjects/Atm/Atm.Application/Atm.Application.csproj": {
+                "projectPath": "/Users/geersm/RiderProjects/Atm/Atm.Application/Atm.Application.csproj"
+              },
+              "/Users/geersm/RiderProjects/Atm/Atm.Domain/Atm.Domain.csproj": {
+                "projectPath": "/Users/geersm/RiderProjects/Atm/Atm.Domain/Atm.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.8.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.2, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
