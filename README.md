@@ -10,6 +10,7 @@ The Atm app is a simple web application that simulates basic ATM operations. It 
 - **View Account Details**: Users can view their account details and transaction history.
 
 # Basic Instructions 
+Once you have cloned the repository and installed the dependencies, you can run the application. The application will start a local server, and you can access it through your web browser.
 You must create two accounts with unique usernames Once you have created the accounts you can deposit, withdraw and transfer between them. 
 You will be able to see the transaction history of each account by providing the account names. 
 
