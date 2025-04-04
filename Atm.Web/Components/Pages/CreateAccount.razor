@@ -4,17 +4,17 @@
 @inject IAccountService AccountService
 @rendermode InteractiveServer
 
-<PageTitle>Create Account</PageTitle>
+<PageTitle>Create User</PageTitle>
 
 <div class="container">
-    <h1>Create New Account</h1>
+    <h1>Create New User</h1>
 
     @if (isSuccess)
     {
         <div class="alert alert-success">
-            <h4>Account Created Successfully!</h4>
+            <h4>User Created Successfully!</h4>
             <p>Username: @model.AccountNumber</p>
-            <button class="btn btn-primary mt-2" @onclick="ResetForm">Create Another Account</button>
+            <button class="btn btn-primary mt-2" @onclick="ResetForm">Create Another User</button>
         </div>
     }
     else
